@@ -1,12 +1,12 @@
 [gd_scene load_steps=19 format=3 uid="uid://ds7sc1kim2t2x"]
 
-[ext_resource type="Texture2D" uid="uid://cli0vcij3g7f2" path="res://Assets/Treasure Hunter.png" id="1_6dc14"]
-[ext_resource type="Script" uid="uid://kwcc2ww16is8" path="res://Prefabs/Player/player.gd" id="1_ucnkw"]
-[ext_resource type="Script" uid="uid://c33plxph017bk" path="res://Prefabs/Player/Scripts/player_state_machine.gd" id="2_sysjd"]
-[ext_resource type="Script" uid="uid://cml1dveox5pdo" path="res://Prefabs/Player/Scripts/animation_handler.gd" id="2_you5p"]
-[ext_resource type="Script" uid="uid://cbkjnydmwdnan" path="res://Prefabs/Player/Scripts/States/state_idle.gd" id="5_ucnkw"]
-[ext_resource type="Script" uid="uid://c4fqat2wc18fb" path="res://Prefabs/Player/Scripts/States/state_walk.gd" id="6_ine62"]
-[ext_resource type="Script" uid="uid://dh6wj7j3n3en5" path="res://Prefabs/Player/Scripts/player_data.gd" id="7_ine62"]
+[ext_resource type="Texture2D" uid="uid://cli0vcij3g7f2" path="res://Assets/Player/Treasure Hunter.png" id="1_6dc14"]
+[ext_resource type="Script" uid="uid://kwcc2ww16is8" path="res://Player/player.gd" id="1_ucnkw"]
+[ext_resource type="Script" uid="uid://c33plxph017bk" path="res://Player/Scripts/player_state_machine.gd" id="2_sysjd"]
+[ext_resource type="Script" uid="uid://cml1dveox5pdo" path="res://Player/Scripts/animation_handler.gd" id="2_you5p"]
+[ext_resource type="Script" uid="uid://cbkjnydmwdnan" path="res://Player/Scripts/States/state_idle.gd" id="5_ucnkw"]
+[ext_resource type="Script" uid="uid://c4fqat2wc18fb" path="res://Player/Scripts/States/state_walk.gd" id="6_ine62"]
+[ext_resource type="Script" uid="uid://dh6wj7j3n3en5" path="res://Player/Scripts/player_data.gd" id="7_ine62"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b30ri"]
 radius = 5.0
