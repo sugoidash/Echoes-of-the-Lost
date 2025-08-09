@@ -1,7 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://dlr6q52o4b86d"]
+[gd_scene load_steps=3 format=3 uid="uid://dlr6q52o4b86d"]
 
 [ext_resource type="PackedScene" uid="uid://ds7sc1kim2t2x" path="res://Player/player.tscn" id="1_lc1oi"]
+[ext_resource type="PackedScene" uid="uid://b2gv3ufjsgq3u" path="res://Enemies/Phantom/phantom.tscn" id="2_8od7v"]
 
 [node name="Playground" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_lc1oi")]
+
+[node name="Phantom" parent="." instance=ExtResource("2_8od7v")]
