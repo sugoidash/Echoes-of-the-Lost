@@ -1,11 +1,13 @@
-[gd_scene load_steps=11 format=3 uid="uid://b2gv3ufjsgq3u"]
+[gd_scene load_steps=13 format=3 uid="uid://b2gv3ufjsgq3u"]
 
 [ext_resource type="Script" uid="uid://p60pllh2b4md" path="res://Enemies/Phantom/phantom.gd" id="1_mioq8"]
-[ext_resource type="Script" path="res://Enemies/Phantom/Scripts/enemy_data.gd" id="2_tab3i"]
+[ext_resource type="Script" uid="uid://8hcx86tk664u" path="res://Enemies/Phantom/Scripts/phantom_data.gd" id="2_1owa3"]
 [ext_resource type="Script" uid="uid://4658vbc8tcsb" path="res://Enemies/Phantom/Scripts/animation_handler.gd" id="3_tab3i"]
 [ext_resource type="Texture2D" uid="uid://cli0vcij3g7f2" path="res://Assets/Player/Treasure Hunter.png" id="4_1owa3"]
 [ext_resource type="Script" uid="uid://bp3fklpyfo854" path="res://Enemies/Phantom/Scripts/phantom_state_machine.gd" id="4_xc077"]
 [ext_resource type="Script" uid="uid://360s666u5yyi" path="res://Enemies/Phantom/Scripts/States/idle.gd" id="6_fc64k"]
+[ext_resource type="Script" uid="uid://dt3g61vla46yw" path="res://Enemies/Phantom/Scripts/States/standby.gd" id="7_fc64k"]
+[ext_resource type="Script" uid="uid://b6tw3fo25ngfw" path="res://Enemies/Phantom/Scripts/States/chase.gd" id="8_saafr"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xc077"]
 
@@ -22,7 +24,7 @@ radius = 90.3549
 script = ExtResource("1_mioq8")
 
 [node name="PhantomData" type="Node" parent="."]
-script = ExtResource("2_tab3i")
+script = ExtResource("2_1owa3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_xc077")
@@ -41,6 +43,12 @@ script = ExtResource("4_xc077")
 [node name="Idle" type="Node" parent="StateMachine"]
 script = ExtResource("6_fc64k")
 
+[node name="Standby" type="Node" parent="StateMachine"]
+script = ExtResource("7_fc64k")
+
+[node name="Chase" type="Node" parent="StateMachine"]
+script = ExtResource("8_saafr")
+
 [node name="Idle_Range" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Idle_Range"]
@@ -55,3 +63,8 @@ shape = SubResource("CircleShape2D_yji1j")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Effect_Range"]
 shape = SubResource("CircleShape2D_1owa3")
+
+[connection signal="body_entered" from="Idle_Range" to="StateMachine/Standby" method="_on_idle_range_body_entered"]
+[connection signal="body_exited" from="Idle_Range" to="StateMachine/Idle" method="_on_idle_range_body_exited"]
+[connection signal="body_entered" from="Chase_Range" to="StateMachine/Idle" method="_on_chase_range_body_entered"]
+[connection signal="body_exited" from="Chase_Range" to="StateMachine/Chase" method="_on_chase_range_body_exited"]
