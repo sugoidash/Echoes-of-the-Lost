@@ -5,6 +5,7 @@ var prev_state: State
 var current_state: State
 @onready var animation_player: AnimationPlayer = $"../AnimationPlayer"
 @onready var phantom_data: Node = $"../PhantomData"
+@onready var idle_range: CollisionShape2D = $"../Idle_Range/CollisionShape2D"
 
 func _ready():
 	process_mode = Node.PROCESS_MODE_DISABLED
