@@ -1,10 +1,11 @@
-## Standby State
-class_name Phantom_State_Standby extends State
+## Standby Phantom_State
+class_name Phantom_State_Standby extends Phantom_State
 
 var player_in_idle_range: bool = false
 
-func Process(_delta: float) -> State:
+func Process(_delta: float) -> Phantom_State:
 	if player_in_idle_range:
+		print("State changed to Idle")
 		player_in_idle_range = false
 		return state_machine.states["Idle"]
 	return null
