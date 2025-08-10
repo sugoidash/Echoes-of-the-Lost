@@ -3,6 +3,9 @@ class_name Phantom_State_Standby extends Phantom_State
 
 var player_in_idle_range: bool = false
 
+func Enter() -> void:
+	phantom.velocity = Vector2.ZERO
+
 func Process(_delta: float) -> Phantom_State:
 	if player_in_idle_range:
 		print("State changed to Idle")

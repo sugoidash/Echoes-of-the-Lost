@@ -25,6 +25,8 @@ script = ExtResource("1_mioq8")
 
 [node name="PhantomData" type="Node" parent="."]
 script = ExtResource("2_1owa3")
+idle_speed = 20.0
+idle_wander_time = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_xc077")
