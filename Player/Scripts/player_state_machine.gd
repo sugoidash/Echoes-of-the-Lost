@@ -3,6 +3,7 @@ class_name PlayerStateMachine extends Node
 var states: Dictionary
 var prev_state: State
 var current_state: State
+var is_dead: bool = false
 @onready var animation_player: AnimationPlayer = $"../AnimationPlayer"
 @onready var player_data: Node = $"../PlayerData"
 
@@ -51,3 +52,22 @@ func ChangeState( new_state: State) -> void:
 	prev_state = current_state
 	current_state = new_state
 	current_state.Enter()
+
+
+func _on_area_2d_body_entered(body):
+	if is_dead:
+		return
+		
+	# Check if the colliding body is in the "enemies" group.
+	if body.is_in_group("enemies"):
+		# Set the flag to true immediately to prevent this from running again.
+		is_dead = true
+		
+		# Emit the global signal via the EventHandler.
+		EventHandler.emit_signal("player_died")
+		
+		# Disable the player character after death.
+		# This prevents further movement or interaction.
+		set_physics_process(false)
+		process_mode = Node.PROCESS_MODE_DISABLED
+		# You could also hide the player: hide()

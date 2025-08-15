@@ -15,9 +15,18 @@ run/main_scene="res://Scenes/test.tscn"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+EventHandler="*res://Handlers/EventHandler.gd"
+ScreenHandler="*res://Screens/ScreenHandler.tscn"
+
 [dotnet]
 
 project/assembly_name="Echoes of the Lost"
+
+[global_group]
+
+enemies=""
 
 [input]
 

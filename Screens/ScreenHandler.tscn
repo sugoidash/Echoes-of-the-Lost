@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://j86s0mxv6bx2"]
+
+[ext_resource type="Script" uid="uid://bg7q1y3ccnu0d" path="res://Handlers/ScreenHandler.gd" id="1_clylv"]
+[ext_resource type="PackedScene" uid="uid://b1bvomaeroqhr" path="res://Screens/GameOverScreen.tscn" id="2_541tc"]
+
+[node name="ScreenHandler" type="CanvasLayer"]
+script = ExtResource("1_clylv")
+main_menu_scene = ExtResource("2_541tc")

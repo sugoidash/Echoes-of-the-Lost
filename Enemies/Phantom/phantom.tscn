@@ -9,27 +9,26 @@
 [ext_resource type="Script" uid="uid://dt3g61vla46yw" path="res://Enemies/Phantom/Scripts/States/standby.gd" id="7_fc64k"]
 [ext_resource type="Script" uid="uid://b6tw3fo25ngfw" path="res://Enemies/Phantom/Scripts/States/chase.gd" id="8_saafr"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xc077"]
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_saafr"]
-radius = 417.019
+radius = 571.126
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yji1j"]
 radius = 193.003
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1owa3"]
-radius = 316.002
+radius = 340.119
 
-[node name="Phantom" type="CharacterBody2D"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xc077"]
+radius = 8.0
+height = 44.0
+
+[node name="Phantom" type="CharacterBody2D" groups=["enemies"]]
 script = ExtResource("1_mioq8")
 
 [node name="PhantomData" type="Node" parent="."]
 script = ExtResource("2_1owa3")
 idle_speed = 20.0
 idle_wander_time = 1.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CapsuleShape2D_xc077")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 script = ExtResource("3_tab3i")
@@ -65,6 +64,9 @@ shape = SubResource("CircleShape2D_yji1j")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Effect_Range"]
 shape = SubResource("CircleShape2D_1owa3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_xc077")
 
 [connection signal="body_entered" from="Idle_Range" to="StateMachine/Standby" method="_on_idle_range_body_entered"]
 [connection signal="body_exited" from="Idle_Range" to="StateMachine/Idle" method="_on_idle_range_body_exited"]
