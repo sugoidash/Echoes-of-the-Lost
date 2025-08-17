@@ -1,8 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://j86s0mxv6bx2"]
+[gd_scene load_steps=4 format=3 uid="uid://j86s0mxv6bx2"]
 
 [ext_resource type="Script" uid="uid://bg7q1y3ccnu0d" path="res://Handlers/ScreenHandler.gd" id="1_clylv"]
-[ext_resource type="PackedScene" uid="uid://b1bvomaeroqhr" path="res://Screens/GameOverScreen.tscn" id="2_541tc"]
+[ext_resource type="PackedScene" uid="uid://dhui83xveh6ey" path="res://Screens/MainMenuScreen.tscn" id="2_xqhv5"]
+[ext_resource type="PackedScene" uid="uid://dlr6q52o4b86d" path="res://Scenes/test.tscn" id="4_38pb0"]
 
 [node name="ScreenHandler" type="CanvasLayer"]
 script = ExtResource("1_clylv")
-main_menu_scene = ExtResource("2_541tc")
+game_scene = ExtResource("4_38pb0")
+main_menu_scene = ExtResource("2_xqhv5")
