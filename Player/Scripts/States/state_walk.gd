@@ -1,8 +1,14 @@
+# state_walk.gd
+
 ## Walk State
 class_name State_Walk extends State
 
 func Process(_delta: float) -> State:
-	if player_data.direction.x != 0 || player_data.direction.y != 0:
+	# Transition to Sprint state
+	if Input.is_action_pressed("sprint") and player_data.stamina > 0:
+		return state_machine.states["Sprint"]
+		
+	if player_data.direction.x != 0 or player_data.direction.y != 0:
 		player_data.last_direction = player_data.direction
 		player.velocity.x = player_data.direction.x * player_data.max_speed
 		player.velocity.y = -player_data.direction.y * player_data.max_speed

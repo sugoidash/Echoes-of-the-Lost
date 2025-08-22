@@ -202,13 +202,27 @@ texture_region_size = Vector2i(32, 32)
 1:0/0 = 0
 1:0/0/texture_origin = Vector2i(0, 16)
 8:0/size_in_atlas = Vector2i(1, 2)
+8:0/next_alternative_id = 4
 8:0/0 = 0
 8:0/0/texture_origin = Vector2i(0, 16)
+8:0/1 = 1
+8:0/1/texture_origin = Vector2i(0, 16)
+8:0/1/modulate = Color(0.38609, 0.156326, 0, 1)
 8:3/size_in_atlas = Vector2i(1, 2)
+8:3/next_alternative_id = 4
 8:3/0 = 0
 8:3/0/texture_origin = Vector2i(0, 16)
+8:3/2 = 2
+8:3/2/texture_origin = Vector2i(0, 16)
+8:3/2/modulate = Color(0.38609, 0.156326, 0, 1)
+8:6/next_alternative_id = 2
 8:6/0 = 0
+8:6/1 = 1
+8:6/1/modulate = Color(0.38609, 0.156326, 0, 1)
+10:8/next_alternative_id = 2
 10:8/0 = 0
+10:8/1 = 1
+10:8/1/modulate = Color(0.38609, 0.156326, 0, 1)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eay0l"]
 texture = ExtResource("4_877wf")
@@ -1329,6 +1343,8 @@ texture_region_size = Vector2i(32, 32)
 
 [sub_resource type="TileSet" id="TileSet_n4v6a"]
 tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 2
+physics_layer_0/collision_mask = 2
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "Floor"
 terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
@@ -1344,5 +1360,7 @@ sources/18 = SubResource("TileSetAtlasSource_e3jh4")
 sources/19 = SubResource("TileSetAtlasSource_kc06l")
 sources/22 = SubResource("TileSetAtlasSource_2eu7y")
 
-[node name="TileMapLayer" type="TileMapLayer"]
+[node name="TileMapLayer" type="TileMapLayer" groups=["world_tile_map"]]
+z_index = -1
+tile_map_data = PackedByteArray(0, 0, 7, 0, 247, 255, 12, 0, 8, 0, 3, 0, 0, 0)
 tile_set = SubResource("TileSet_n4v6a")
