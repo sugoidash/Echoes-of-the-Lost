@@ -7,7 +7,7 @@ var _direction: Vector2 = Vector2.ZERO
 func Process(_delta: float) -> Phantom_State:
 	if !player_in_chase_range:
 		player_in_chase_range = true
-		print("Phantom_State changed to Idle")
+		#print("Phantom_State changed to Idle")
 		return state_machine.states["Idle"]
 	return null
 	

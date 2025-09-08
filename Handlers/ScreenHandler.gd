@@ -34,8 +34,10 @@ func _ready():
 # --- FIXED FUNCTION ---
 # This function runs every time the scene tree changes (e.g., a new scene is loaded).
 func _on_tree_changed():
+	var scene = null
 	# The 'tree_changed' signal has no parameters, so we get the scene manually.
-	var scene = get_tree().current_scene
+	if not get_tree() == null:
+		scene = get_tree().current_scene
 
 
 	# --- FIX: Added a null check for 'scene' ---

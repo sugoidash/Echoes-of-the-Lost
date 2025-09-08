@@ -8,6 +8,10 @@ func Process(_delta: float) -> State:
 		player.velocity = Vector2.ZERO
 		return null
 	
+	# Transition to Crawl state
+	if Input.is_action_pressed("crawl") or player_data.stamina == 0:
+		return state_machine.states["Crawl"]
+	
 	# Transition to Sprint state
 	if Input.is_action_pressed("sprint") and player_data.stamina > 0:
 		return state_machine.states["Sprint"]

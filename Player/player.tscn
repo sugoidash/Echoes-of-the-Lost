@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://ds7sc1kim2t2x"]
+[gd_scene load_steps=25 format=3 uid="uid://ds7sc1kim2t2x"]
 
 [ext_resource type="Texture2D" uid="uid://cli0vcij3g7f2" path="res://Assets/Player/Treasure Hunter.png" id="1_6dc14"]
 [ext_resource type="Script" uid="uid://kwcc2ww16is8" path="res://Player/player.gd" id="1_ucnkw"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://cbkjnydmwdnan" path="res://Player/Scripts/States/state_idle.gd" id="5_ucnkw"]
 [ext_resource type="Script" uid="uid://c4fqat2wc18fb" path="res://Player/Scripts/States/state_walk.gd" id="6_ine62"]
 [ext_resource type="Script" uid="uid://dh6wj7j3n3en5" path="res://Player/Scripts/player_data.gd" id="7_ine62"]
+[ext_resource type="Script" uid="uid://30ucb0nhc5db" path="res://Player/Scripts/States/state_crawl.gd" id="7_x3vf3"]
 [ext_resource type="Script" uid="uid://b0fc7qc42sjak" path="res://Player/Scripts/States/state_sprint.gd" id="8_od3ui"]
 [ext_resource type="Script" uid="uid://v7s3omjba0ih" path="res://Player/Scripts/UI_handler.gd" id="9_00tjw"]
 
@@ -181,8 +182,10 @@ script = ExtResource("1_ucnkw")
 
 [node name="PlayerData" type="Node" parent="."]
 script = ExtResource("7_ine62")
-max_speed = 100.0
+max_speed = 200.0
 sprint_speed = 400.0
+crawl_speed = 50.0
+max_stamina = 50.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 17)
@@ -206,6 +209,9 @@ script = ExtResource("2_sysjd")
 
 [node name="Idle" type="Node" parent="StateMachine"]
 script = ExtResource("5_ucnkw")
+
+[node name="Crawl" type="Node" parent="StateMachine"]
+script = ExtResource("7_x3vf3")
 
 [node name="Walk" type="Node" parent="StateMachine"]
 script = ExtResource("6_ine62")

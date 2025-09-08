@@ -8,6 +8,10 @@ func Process(_delta: float) -> State:
 	# Transition to Idle state if there's no movement input
 	if player_data.direction == Vector2.ZERO:
 		return state_machine.states["Idle"]
+	
+	# Transition to Crawl state
+	if Input.is_action_pressed("crawl") or player_data.stamina == 0:
+		return state_machine.states["Crawl"]
 
 	# Transition to Walk state if the sprint button is released
 	if Input.is_action_just_released("sprint"):

@@ -9,11 +9,11 @@ var _wander_direction: Vector2 = Vector2.ZERO
 
 func Process(_delta: float) -> Phantom_State:
 	if !player_in_idle_range:
-		print("Phantom_State changed to Standby")
+		#print("Phantom_State changed to Standby")
 		player_in_idle_range = true
 		return state_machine.states["Standby"]
 	if player_in_chase_range:
-		print("Phantom_State changed to Chase")
+		#print("Phantom_State changed to Chase")
 		player_in_chase_range = false
 		return state_machine.states["Chase"]
 	return null

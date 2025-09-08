@@ -4,6 +4,10 @@
 class_name State_Walk extends State
 
 func Process(_delta: float) -> State:
+	# Transition to Crawl state
+	if Input.is_action_pressed("crawl") or player_data.stamina == 0:
+		return state_machine.states["Crawl"]
+		
 	# Transition to Sprint state
 	if Input.is_action_pressed("sprint") and player_data.stamina > 0:
 		return state_machine.states["Sprint"]

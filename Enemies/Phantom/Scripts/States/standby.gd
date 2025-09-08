@@ -8,7 +8,7 @@ func Enter() -> void:
 
 func Process(_delta: float) -> Phantom_State:
 	if player_in_idle_range:
-		print("State changed to Idle")
+		#print("State changed to Idle")
 		player_in_idle_range = false
 		return state_machine.states["Idle"]
 	return null
